@@ -7,6 +7,7 @@ import { headsets } from './data.js';
 import Headsetinfo from './pages/Headsetinfo.jsx';
 import Cart from './pages/Cart.jsx';
 import React, { useEffect, useState } from 'react';
+import ScrollToTop from './components/ScrollToTop.jsx';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -46,6 +47,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <ScrollToTop />
         <Nav numberOfItems={numberOfItems()} />
         <Route path="/" exact component={Home} />
         <Route path="/headsets" exact render={() => <Headsets headsets={headsets} />} />
