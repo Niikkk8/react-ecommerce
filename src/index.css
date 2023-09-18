@@ -529,7 +529,7 @@ headsetS PAGE
 
 #headsets_main {
   flex: 1;
-  background-color: rgb(248,249,250);
+  background-color: #fff;
 }
 
 .headsets_header {
@@ -716,7 +716,7 @@ select {
 .cart_headset-img {
   width: 100%;
   max-width: 90px;
-  max-height: 128px;
+  max-height: 90px;
 }
 
 
