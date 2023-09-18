@@ -7,10 +7,10 @@ const Cart = ({ cart, changeQuantity, removeItem }) => {
     const subTotal = () => {
         let price = 0;
         cart.forEach(item => {
-            price += +(item.salePrice || item.originalPrice * item.quantity)
+            price += (item.salePrice || item.originalPrice) * item.quantity
         })
         return price;
-    };
+    }
     return (
         <div id="headsets_body">
             <main id="headsets_main">
@@ -39,7 +39,7 @@ const Cart = ({ cart, changeQuantity, removeItem }) => {
                                                         <span className="cart_headset-price">
                                                             &#x20B9;{(headset.salePrice || headset.originalPrice).toFixed(2)}
                                                         </span>
-                                                        <button className="cart_headset-remove" onClick={() =>removeItem(headset)}>
+                                                        <button className="cart_headset-remove" onClick={() => removeItem(headset)}>
                                                             Remove
                                                         </button>
                                                     </div>
@@ -58,17 +58,17 @@ const Cart = ({ cart, changeQuantity, removeItem }) => {
                                     })
                                 }
                             </div>
-                            {cart.length === 0 &&<div className="cart_empty">
+                            {cart.length === 0 && <div className="cart_empty">
                                 <img src={EmptyCart} alt="" className="cart_empty-img" />
                                 <h2>You don't have any headsets in your cart!</h2>
-                                    <Link to="/headsets">
-                                        <button className="btn">
-                                            Browse Headsets
-                                        </button>
-                                    </Link>
+                                <Link to="/headsets">
+                                    <button className="btn">
+                                        Browse Headsets
+                                    </button>
+                                </Link>
                             </div>}
                         </div>
-                        {cart.length>0 && <div className="total">
+                        {cart.length > 0 && <div className="total">
                             <div className="total_item total_sub-total">
                                 <span>Sub Total</span>
                                 <span>&#x20B9;{subTotal()}</span>
