@@ -267,6 +267,7 @@ header {
 
 .headsets_container {
   padding: 24px 0;
+  background-color: #fff;
 }
 
 .row {
@@ -364,7 +365,7 @@ FEATURES
 
 #features {
   padding-top: 8vw;
-  background-color: #caf0f8;
+  background-color: #fff;
 }
 
 .headsets {
@@ -384,17 +385,17 @@ FEATURES
 }
 
 .headset_img {
-  max-height: 320px;
   max-width: 250px;
   transition: all 300ms ease;
-  height: 100%;
+  height: max-content;
   width: 100%;
+  aspect-ratio: 9/10;
 }
 
 .headset_img-skeleton {
   width: 100%;
+  aspect-ratio: 9/10;
   max-width: 250px;
-  height: 320px;
   background-color: rgb(204, 204, 204);
   margin-bottom: 8px;
 }
