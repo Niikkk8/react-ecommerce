@@ -1,11 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Rating from "../components/ui/Rating";
 import Price from "../components/ui/Price";
 import Headset from "../components/ui/Headset.jsx"
 
-const Headsetinfo = ({ headsets, addToCart }) => {
+const Headsetinfo = ({ headsets, addToCart, cart}) => {
     const { id } = useParams();
     const headset = headsets.find(headset => +headset.id === +id)
 
@@ -63,7 +62,9 @@ const Headsetinfo = ({ headsets, addToCart }) => {
                                 </div>
                                 {
                                     headsetExistsInCart() 
-                                    ? (<button className="btn">Checkout</button> )
+                                    ? ( <Link to={`/cart`} className="headset_link" >
+                                            <button className="btn">Checkout</button> 
+                                        </Link> )
                                     : (<button className="btn" onClick={() => addHeadsetToCart(headset)}>Add to Cart</button>)
                                 }
 

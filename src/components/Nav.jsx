@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import EarGearLogo from '../assets/ear_gear-logo.png'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
-const Nav = () => {
+const Nav = ({numberOfItems}) => {
     function openMenu(){
         document.body.classList += " menu-open";
     }
@@ -15,7 +15,9 @@ const Nav = () => {
         <div>
             <nav>
                 <div className="nav_container">
+                    <Link to="/">
                     <img src={EarGearLogo} alt="" className="logo" />
+                    </Link>
                     <ul className="nav_links">
                         <li className="nav_list">
                             <Link to="/" className="nav_link nav_link-hover">Home</Link>
@@ -30,7 +32,11 @@ const Nav = () => {
                             <Link to="/cart" className="nav_link nav_link-primary">
                                 <FontAwesomeIcon icon="shopping-cart" />
                             </Link>
-                            <span className="cart_length">2</span>
+                            {
+                                numberOfItems>0 
+                                && 
+                                <span className="cart_length">{numberOfItems}</span>
+                            }
                         </li>
                     </ul>
                     <div className="menu_backdrop">

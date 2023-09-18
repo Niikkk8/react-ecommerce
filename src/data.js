@@ -1,16 +1,15 @@
-// FAKE DATA
 export const headsets = [
   {
     id: 1,
-    title: "Crack the Coding Interview",
-    url: "https://covers.openlibrary.org/b/id/8091016-L.jpg",
+    title: "JBL Quantum 100",
+    url: "./assets/JBL Quantum 100.jpg",
     originalPrice: 49.95,
     salePrice: 14.95,
     rating: 4.5,
   },
   {
     id: 2,
-    title: "Atomic Habits",
+    title: "Sony WHXB700",
     url: "https://covers.openlibrary.org/b/id/10958382-L.jpg",
     originalPrice: 39,
     salePrice: null,
@@ -18,7 +17,7 @@ export const headsets = [
   },
   {
     id: 3,
-    title: "Can't Hurt Me",
+    title: "Sony WHCH520",
     url: "https://covers.openlibrary.org/b/id/10425061-L.jpg",
     originalPrice: 29,
     salePrice: null,
@@ -26,7 +25,7 @@ export const headsets = [
   },
   {
     id: 4,
-    title: "Deep Work",
+    title: "JBL Tune 760 NC",
     url: "https://covers.openlibrary.org/b/id/10088428-L.jpg",
     originalPrice: 44,
     salePrice: 19,
@@ -34,7 +33,7 @@ export const headsets = [
   },
   {
     id: 5,
-    title: "The 10X Rule",
+    title: "Boat Rockerz 450",
     url: "https://covers.openlibrary.org/b/id/9978588-L.jpg",
     originalPrice: 32,
     salePrice: null,
@@ -42,7 +41,7 @@ export const headsets = [
   },
   {
     id: 6,
-    title: "Sell Or Be Sold",
+    title: "JBL Live 500 BT",
     url: "https://covers.openlibrary.org/b/id/7737110-L.jpg",
     originalPrice: 70,
     salePrice: 12.5,
@@ -50,7 +49,7 @@ export const headsets = [
   },
   {
     id: 7,
-    title: "Rich Dad Poor Dad",
+    title: "JBL Tune 720 BT",
     url: "https://covers.openlibrary.org/b/id/2380224-L.jpg",
     originalPrice: 11,
     salePrice: 10,
@@ -58,7 +57,7 @@ export const headsets = [
   },
   {
     id: 8,
-    title: "Cashflow Quadrant",
+    title: "Noise Two Wireless",
     url: "https://covers.openlibrary.org/b/id/1954899-L.jpg",
     originalPrice: 38,
     salePrice: 17.95,
@@ -66,7 +65,7 @@ export const headsets = [
   },
   {
     id: 9,
-    title: "48 Laws of Power Summary",
+    title: "Boat Rockerz 551 ANC",
     url: "https://covers.openlibrary.org/b/id/8906626-L.jpg",
     originalPrice: 35,
     salePrice: 19.95,
@@ -74,7 +73,7 @@ export const headsets = [
   },
   {
     id: 10,
-    title: "The 5 Second Rule",
+    title: "Boat Immortal IM 200",
     url: "https://covers.openlibrary.org/b/id/8114155-L.jpg",
     originalPrice: 40,
     salePrice: null,
@@ -82,7 +81,7 @@ export const headsets = [
   },
   {
     id: 11,
-    title: "How to Win Friends & Influence People",
+    title: "HyperX Cloud Stinger 2",
     url: "https://covers.openlibrary.org/b/id/7895280-L.jpg",
     originalPrice: 30,
     salePrice: 20,
@@ -90,10 +89,10 @@ export const headsets = [
   },
   {
     id: 12,
-    title: "Mastery",
+    title: "HyperX Cloud III",
     url: "https://covers.openlibrary.org/b/id/8479576-L.jpg",
     originalPrice: 30,
     salePrice: 12.95,
     rating: 4.5,
-  },
+  }
 ];
