@@ -75,7 +75,7 @@ const Cart = ({ cart, changeQuantity, removeItem }) => {
                             </div>
                             <div className="total_item total_tax">
                                 <span>Tax</span>
-                                <span>&#x20B9;{(total() * 0.21785).toFixed(2)}</span>
+                                <span>&#x20B9;{(total() * 0.21875).toFixed(2)}</span>
                             </div>
                             <div className="total_item total_price">
                                 <span>Total</span>
