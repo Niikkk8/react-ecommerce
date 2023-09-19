@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Cart = ({ cart, changeQuantity, removeItem }) => {
 
-    const subTotal = () => {
+    const total = () => {
         let price = 0;
         cart.forEach(item => {
             price += (item.salePrice || item.originalPrice) * item.quantity
@@ -71,15 +71,15 @@ const Cart = ({ cart, changeQuantity, removeItem }) => {
                         {cart.length > 0 && <div className="total">
                             <div className="total_item total_sub-total">
                                 <span>Sub Total</span>
-                                <span>&#x20B9;{subTotal()}</span>
+                                <span>&#x20B9;{(total() * 0.78125).toFixed(2)}</span>
                             </div>
                             <div className="total_item total_tax">
                                 <span>Tax</span>
-                                <span>&#x20B9;{(subTotal() * 0.18).toFixed(2)}</span>
+                                <span>&#x20B9;{(total() * 0.21785).toFixed(2)}</span>
                             </div>
                             <div className="total_item total_price">
                                 <span>Total</span>
-                                <span>&#x20B9;{(subTotal() * 1.18).toFixed(2)}</span>
+                                <span>&#x20B9;{(total()).toFixed(2)}</span>
                             </div>
                             <button className="btn btn_checkout no-cursor" onClick={() => alert("I'm still working on it!")}>
                                 Proceed to checkout
