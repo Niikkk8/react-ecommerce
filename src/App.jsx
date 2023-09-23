@@ -60,24 +60,3 @@ function App() {
 }
 
 export default App;
-
-// const dupeItem = cart.find(item => +item.id === +headset.id)
-// if  (dupeItem){
-//   setCart(cart.map(item => {
-//     if (item.id === dupeItem.id){
-//       return{
-//         ...item,
-//         quantity: item.quantity + 1
-//       }
-//     }
-//     else{
-//       return item
-//     }
-//   }))
-// }
-// else{
-//   setCart([...cart, {...headset, quantity: 1}])
-// }
-// useEffect(() => {
-
-// },[cart])

@@ -1,18 +1,24 @@
+// Imports
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useParams } from "react-router-dom";
 import Rating from "../components/ui/Rating";
 import Price from "../components/ui/Price";
 import Headset from "../components/ui/Headset.jsx"
 
-const Headsetinfo = ({ headsets, addToCart, cart}) => {
+//component for displaying detailed information about a headset.
+const Headsetinfo = ({ headsets, addToCart, cart }) => {
+    // Get the 'id' parameter from the route URL.
     const { id } = useParams();
+    // Find the specific headset based on the 'id' parameter.
     const headset = headsets.find(headset => +headset.id === +id)
 
+    // Function to add the selected headset to the shopping cart.
     function addHeadsetToCart(headset) {
         addToCart(headset)
     }
 
-    function headsetExistsInCart(){
+    // Function to check if the headset is already in the shopping cart.
+    function headsetExistsInCart() {
         return cart.find(headset => headset.id === +id)
     }
 
@@ -22,6 +28,7 @@ const Headsetinfo = ({ headsets, addToCart, cart}) => {
                 <div className="headsets_container">
                     <div className="row">
                         <div className="headset_selected-top">
+                            {/* Link to navigate back to the list of headsets */}
                             <Link to="/headsets" className="headset_link">
                                 <FontAwesomeIcon icon="arrow-left" />
                             </Link>
@@ -61,11 +68,16 @@ const Headsetinfo = ({ headsets, addToCart, cart}) => {
                                     </p>
                                 </div>
                                 {
+                                    // Check if the headset is already in the cart and display the appropriate button.
                                     headsetExistsInCart() 
-                                    ? ( <Link to={`/cart`} className="headset_link" >
+                                    ? (
+                                        <Link to={`/cart`} className="headset_link">
                                             <button className="btn">Checkout</button> 
-                                        </Link> )
-                                    : (<button className="btn" onClick={() => addHeadsetToCart(headset)}>Add to Cart</button>)
+                                        </Link>
+                                    )
+                                    : (
+                                        <button className="btn" onClick={() => addHeadsetToCart(headset)}>Add to Cart</button>
+                                    )
                                 }
 
                             </div>
@@ -81,6 +93,7 @@ const Headsetinfo = ({ headsets, addToCart, cart}) => {
                         </div>
                         <div className="headsets">
                             {
+                                // Filter and display recommended headsets (rating of 5) excluding the selected one.
                                 headsets
                                     .filter(headset => headset.rating === 5 && +headset.id !== +id)
                                     .slice(0, 4)

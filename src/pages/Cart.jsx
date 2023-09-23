@@ -1,16 +1,20 @@
+// Imports
 import React from 'react';
 import EmptyCart from '../assets/empty_cart.svg';
 import { Link } from 'react-router-dom';
 
+//component for rendering the shopping cart.
 const Cart = ({ cart, changeQuantity, removeItem }) => {
-
+    // Function to calculate the total price of items in the cart.
     const total = () => {
         let price = 0;
         cart.forEach(item => {
+            // Calculate the price based on sale price if available, otherwise use the original price.
             price += (item.salePrice || item.originalPrice) * item.quantity
         })
         return price;
     }
+
     return (
         <div id="headsets_body">
             <main id="headsets_main">
@@ -27,6 +31,7 @@ const Cart = ({ cart, changeQuantity, removeItem }) => {
                             </div>
                             <div className="cart_body">
                                 {
+                                    // Map through the items in the cart and render cart item details.
                                     cart.map(headset => {
                                         return (
                                             <div className="cart_item">
@@ -52,12 +57,15 @@ const Cart = ({ cart, changeQuantity, removeItem }) => {
                                                         value={headset.quantity}
                                                         onChange={(event) => changeQuantity(headset, event.target.value)} />
                                                 </div>
-                                                <div className="cart_total">&#x20B9;{((headset.salePrice || headset.originalPrice).toFixed(2) * headset.quantity)}</div>
+                                                <div className="cart_total">
+                                                    &#x20B9;{((headset.salePrice || headset.originalPrice).toFixed(2) * headset.quantity)}
+                                                </div>
                                             </div>
                                         )
                                     })
                                 }
                             </div>
+                            {/* Display a message and a button if the cart is empty */}
                             {cart.length === 0 && <div className="cart_empty">
                                 <img src={EmptyCart} alt="" className="cart_empty-img" />
                                 <h2>You don't have any headsets in your cart!</h2>
@@ -68,6 +76,7 @@ const Cart = ({ cart, changeQuantity, removeItem }) => {
                                 </Link>
                             </div>}
                         </div>
+                        {/* Display the total price and checkout button if the cart is not empty */}
                         {cart.length > 0 && <div className="total">
                             <div className="total_item total_sub-total">
                                 <span>Sub Total</span>
@@ -81,6 +90,7 @@ const Cart = ({ cart, changeQuantity, removeItem }) => {
                                 <span>Total</span>
                                 <span>&#x20B9;{(total()).toFixed(2)}</span>
                             </div>
+                            {/* Button to proceed to checkout (currently alerts a message) */}
                             <button className="btn btn_checkout no-cursor" onClick={() => alert("I'm still working on it!")}>
                                 Proceed to checkout
                             </button>

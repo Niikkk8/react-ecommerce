@@ -3,8 +3,7 @@ import Headset from './ui/Headset.jsx'
 import { headsets } from '../data.js'
 
 const Featured = () => {
-    // function getFiveStarHeadsets(){
-    // }
+
     return (
         <section id="features">
             <div className="container">
